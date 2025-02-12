@@ -1,0 +1,13 @@
+from math import gcd
+
+Y, W = map(int, input().split())
+
+# The highest roll determines the minimum winning number
+max_roll = max(Y, W)
+
+# The number of favorable outcomes
+favorable = 6 - max_roll + 1
+
+# Simplify the fraction
+g = gcd(favorable, 6)
+print(f"{favorable // g}/{6 // g}")
