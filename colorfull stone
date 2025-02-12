@@ -1,0 +1,13 @@
+
+S = input().strip()
+T = input().strip()
+
+position = 0  # 0-based index for tracking movement
+
+for move in T:
+    if S[position] == move:
+        position += 1
+        if position == len(S):  # Stop if we reach the last stone
+            break
+
+print(position + 1)  # Convert to 1-based index
