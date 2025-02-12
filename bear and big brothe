@@ -1,0 +1,10 @@
+a, b = map(int, input().split())  # Read Limak and Bob's weights
+
+years = 0  # Initialize year counter
+
+while a <= b:  
+    a *= 3  # Limak triples in weight
+    b *= 2  # Bob doubles in weight
+    years += 1  # Increment the year count
+
+print(years)
