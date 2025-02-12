@@ -1,0 +1,8 @@
+# Read the input (4 space-separated integers)
+horseshoes = list(map(int, input().split()))
+
+# Find the number of unique horseshoes using a set
+unique_horseshoes = len(set(horseshoes))
+
+# The number of horseshoes to buy = total (4) - unique ones
+print(4 - unique_horseshoes)
