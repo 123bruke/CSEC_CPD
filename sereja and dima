@@ -1,0 +1,25 @@
+n = int(input())  # num of cards
+cards = list(map(int, input().split()))  # Read the card values
+
+sereja_score = 0
+dima_score = 0
+turn = True  # True for Sereja, False for Dima
+
+left, right = 0, n - 1  # Two pointers
+
+while left <= right:
+    if cards[left] > cards[right]:  
+        chosen_card = cards[left]
+        left += 1  # Move left pointer
+    else:
+        chosen_card = cards[right]
+        right -= 1  # Move right pointer
+
+    if turn:  
+        sereja_score += chosen_card  # Sereja's turn
+    else:
+        dima_score += chosen_card  # Dima's turn
+
+    turn = not turn  # Switch turn
+
+print(sereja_score, dima_score)
