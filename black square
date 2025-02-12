@@ -1,0 +1,10 @@
+# Read calorie values for squares 1 to 4
+calories = list(map(int, input().split()))
+
+# Read the sequence of key presses
+s = input().strip()
+
+# Calculate total calories consumed
+total_calories = sum(calories[int(digit) - 1] for digit in s)
+
+print(total_calories)
