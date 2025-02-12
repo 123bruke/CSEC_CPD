@@ -1,0 +1,14 @@
+# Read number of problems
+n = int(input())
+
+# Initialize count of problems the team will attempt
+count = 0
+
+# Process each problem
+for _ in range(n):
+    p, v, t = map(int, input().split())
+    if p + v + t >= 2:  # If at least two members are sure
+        count += 1
+
+# Print the total count of problems the team will attempt
+print(count)
