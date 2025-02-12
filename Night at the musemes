@@ -1,0 +1,12 @@
+s = input().strip()
+
+current_position = 'a'  # Start at 'a'
+total_moves = 0
+
+for letter in s:
+    clockwise_distance = abs(ord(letter) - ord(current_position))
+    counter_clockwise_distance = 26 - clockwise_distance  # Wrap around the circle
+    total_moves += min(clockwise_distance, counter_clockwise_distance)
+    current_position = letter  # Move to the new position
+
+print(total_moves)
