@@ -1,0 +1,6 @@
+n = int(input())  # Read the number of columns
+heights = list(map(int, input().split()))  # Read the column heights
+
+heights.sort()  # Sort in ascending order
+
+print(*heights)  # Print the sorted list
