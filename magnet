@@ -1,0 +1,10 @@
+n = int(input())  # Read the number of magnets
+magnets = [input().strip() for _ in range(n)]  # Read magnet orientations
+
+groups = 1  # At least one group always exists
+
+for i in range(1, n):
+    if magnets[i] != magnets[i - 1]:  # New group formed when orientation changes
+        groups += 1
+
+print(groups)
