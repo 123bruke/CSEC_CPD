@@ -1,0 +1,17 @@
+# Read the matrix
+matrix = []
+for i in range(5):
+    row = list(map(int, input().split()))
+    matrix.append(row)
+
+# Find the position of '1'
+for i in range(5):
+    for j in range(5):
+        if matrix[i][j] == 1:
+            row_pos, col_pos = i, j
+
+# Compute the number of moves needed (Manhattan distance)
+moves = abs(row_pos - 2) + abs(col_pos - 2)
+
+# Print the result
+print(moves)
