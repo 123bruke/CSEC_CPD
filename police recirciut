@@ -1,0 +1,15 @@
+n = int(input())  # Number of events
+events = list(map(int, input().split()))  # Event val 
+
+police = 0  # Available officers
+unhandled = 0  # Count of unhandled crimes
+
+for event in events:# the event value range 
+    if event > 0:
+        police += event  # Recruit police officers
+    elif police > 0:
+        police -= 1  # Handle crime if officers are available
+    else:
+        unhandled += 1  # No officer available, crime goes unhandled
+
+print(unhandled)
