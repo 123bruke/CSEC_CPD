@@ -1,0 +1,18 @@
+n = int(input())  # Number of wires
+birds = list(map(int, input().split()))  # Birds on each wire
+m = int(input())  # Number of shots
+
+for _ in range(m):
+    x, y = map(int, input().split())  # Read shot details
+    x -= 1  # Convert to 0-based index
+
+    # Move birds to neighboring wires
+    if x > 0:
+        birds[x - 1] += y - 1  # Left wire gets (y-1) birds
+    if x < n - 1:
+        birds[x + 1] += birds[x] - y  # Right wire gets remaining birds
+
+    birds[x] = 0  # The wire that was shot becomes empty
+
+# Print the final state of wires
+print(*birds)
